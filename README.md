@@ -1,4 +1,4 @@
-# Memory allocation for interfaces and empty structs using Golang benchmarks
+# Memory allocation for maps using interface{} and struct{} in Golang benchmarks
 
 Answer to a [question](https://stackoverflow.com/questions/65258003/memory-allocation-of-mapintinterface-vs-mapintstruct) (stackoverflow) related to memory allocation for `map[int]interface{}` and `map[int]struct{}` in Golang.
 

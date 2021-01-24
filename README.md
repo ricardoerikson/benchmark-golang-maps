@@ -1,6 +1,6 @@
-# Memory allocation of `map[int]interface{}` vs `map[int]struct{}` (Golang benchmark)
+# Memory allocation of map[int]interface{} vs map[int]struct{} (Golang benchmark)
 
-Answer to a [question](https://stackoverflow.com/questions/65258003/memory-allocation-of-mapintinterface-vs-mapintstruct) related to memory allocation for `map[int]interface{}` and `map[int]struct{}` in Golang.
+Answer to a [question](https://stackoverflow.com/questions/65258003/memory-allocation-of-mapintinterface-vs-mapintstruct) (stackoverflow) related to memory allocation for `map[int]interface{}` and `map[int]struct{}` in Golang.
 
 # TL;DR
 
@@ -39,8 +39,12 @@ An empty struct `struct{}` has no fields and cannot hold any pointers. As a resu
 
 The difference between the two benchmarks (`Benchmark_EmptyStruct` and `Benchmark_Interface`) is clear when we see the CPU profile. `Benchmark_Interface` does not have the `(*hmap) createOverflow` method that results in an additional memory allocation flow:
 
+### Benchmark_EmptyStruct CPU profile
+
 ![](https://raw.githubusercontent.com/ricardoerikson/benchmark-golang-maps/main/map_empty_struct_cpu_profile.png)
 *Benchmark_EmptyStruct CPU profile [[png](https://raw.githubusercontent.com/ricardoerikson/benchmark-golang-maps/main/map_empty_struct_cpu_profile.png), [svg](https://raw.githubusercontent.com/ricardoerikson/benchmark-golang-maps/main/map_empty_struct_cpu_profile.svg)]*
+
+### Benchmark_Interface CPU profile
 
 ![](https://raw.githubusercontent.com/ricardoerikson/benchmark-golang-maps/main/map_interface_cpu_profile.png)
 *Benchmark_Interface CPU profile [[png](https://raw.githubusercontent.com/ricardoerikson/benchmark-golang-maps/main/map_interface_cpu_profile.png), [svg](https://raw.githubusercontent.com/ricardoerikson/benchmark-golang-maps/main/map_interface_cpu_profile.svg)]*

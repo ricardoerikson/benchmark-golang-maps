@@ -24,7 +24,7 @@ var benchmarks = []struct {
 
 func Benchmark_Interface(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		MapWithInterface(16, 100)
+		MapWithInterface(100, 0)
 	}
 }
 

@@ -1,6 +1,9 @@
-# Memory allocation for maps using interface{} and struct{} in Golang benchmarks
+# Memory allocation and Performance in Golang maps
 
-Answer to a [question](https://stackoverflow.com/questions/65258003/memory-allocation-of-mapintinterface-vs-mapintstruct) (stackoverflow) related to memory allocation for `map[int]interface{}` and `map[int]struct{}` in Golang.
+Answer to a [question](https://stackoverflow.com/questions/65258003/memory-allocation-of-mapintinterface-vs-mapintstruct) (stackoverflow) related to memory allocation for `map[int]interface{}` and `map[int]struct{}` in Golang. 
+
+Medium post: [Memory Allocation and Performance in Golang Maps
+](https://ricardoerikson.medium.com/memory-allocation-and-performance-in-golang-maps-b267b5ad9217)
 
 # TL;DR
 
